@@ -1,0 +1,154 @@
+.marketing-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Summary */
+.marketing-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.marketing-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.marketing-stat-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.marketing-stat-card__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.marketing-stat-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.marketing-stat-card__value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.marketing-stat-card__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Charts */
+.marketing-charts {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-4);
+}
+
+/* Table Section */
+.marketing-table-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.marketing-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.marketing-table-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Campaign name */
+.campaign-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+/* Spent cell */
+.spent-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--font-size-sm);
+}
+
+.spent-bar {
+  width: 80px;
+  height: 4px;
+  background: var(--color-border-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.spent-bar__fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+/* ROI */
+.roi-value {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.roi-value--positive {
+  color: #059669;
+}
+
+/* Form */
+.marketing-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 1280px) {
+  .marketing-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .marketing-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketing-summary {
+    grid-template-columns: 1fr;
+  }
+  .marketing-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .marketing-table-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+}
